@@ -68,6 +68,14 @@ public class RFP2Config
             min = 0.0f,
             max = 2.0f)
         public double playerModelOffset = 0.35f;
+
+        @Comment({ "How far above the camera to put the first person player model", "Default: 0.1" })
+        @Name("Player Model Y Offset")
+        @RangeDouble(
+                min = 0.0f,
+                max = 2.0f)
+        public double playerModelYOffset = 0.1f;
+
     }
     
     // Define structure and defaults of Compatibility section

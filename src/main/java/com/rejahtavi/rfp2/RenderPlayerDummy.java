@@ -142,6 +142,7 @@ public class RenderPlayerDummy extends Render<EntityPlayerDummy>
             
             // Get local copies of config & state
             float   playerModelOffset     = (float) RFP2Config.preferences.playerModelOffset;
+            float   playerModelYOffset    = (float) RFP2Config.preferences.playerModelYOffset;
             boolean isRealArmsEnabled     = RFP2.state.isRealArmsEnabled(player);
             boolean isHeadRotationEnabled = RFP2.state.isHeadRotationEnabled(player);
             
@@ -205,7 +206,7 @@ public class RenderPlayerDummy extends Render<EntityPlayerDummy>
             
             // Generate default rendering coordinates for player body
             playerRenderPosX = player.posX - renderEntity.posX + renderPosX;
-            playerRenderPosY = player.posY - renderEntity.posY + renderPosY;
+            playerRenderPosY = (player.posY - renderEntity.posY + renderPosY) - playerModelYOffset;
             playerRenderPosZ = player.posZ - renderEntity.posZ + renderPosZ;
             
             // If the player IS sleeping, we can skip any extra calculations and proceed directly to rendering.
