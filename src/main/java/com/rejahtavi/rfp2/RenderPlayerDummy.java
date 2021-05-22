@@ -203,7 +203,14 @@ public class RenderPlayerDummy extends Render<EntityPlayerDummy>
              * (In vanilla minecraft, the player's body lags behind the head to provide a more natural look to movement.
              * This can lead to renderYawOffset being off from the main camera by up to 75 degrees!)
              */
-            
+
+            if (!RFP2Config.compatibility.disableWhenSwimming) {
+                if (renderEntity.isSwimming() && RFP2Config.compatibility.swimmingAnimationCompat) {
+                    playerModelOffset += 0.3f;
+                    playerModelYOffset -= 0.3f;
+                }
+            }
+
             // Generate default rendering coordinates for player body
             playerRenderPosX = player.posX - renderEntity.posX + renderPosX;
             playerRenderPosY = (player.posY - renderEntity.posY + renderPosY) - playerModelYOffset;

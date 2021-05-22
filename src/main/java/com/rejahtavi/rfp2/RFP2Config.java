@@ -126,6 +126,10 @@ public class RFP2Config
         @Comment("Suppresses alerts about incompatible mods in chat on startup.")
         @Name("Suppress startup compatibility alert (not recommended).")
         public boolean disableModCompatibilityAlerts = false;
+
+        @Comment("Attempts to move the camera a little bit while swimming to compensate the swimming animation if you have a mod that adds one. Won't work if Disable when swimming is enabled.")
+        @Name("Swimming Animation Compatibility.")
+        public boolean swimmingAnimationCompat = false;
     }
     
     // Subscribe to configuration change event

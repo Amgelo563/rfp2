@@ -7,3 +7,4 @@ This is a modification of the original [RFP2 mod](https://www.curseforge.com/min
 ## Changes:
 
 * Added an option for a Y axis offset.
+* Added an option for compatibility with mods that add swimming animations.
