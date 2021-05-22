@@ -204,8 +204,11 @@ public class RenderPlayerDummy extends Render<EntityPlayerDummy>
              * This can lead to renderYawOffset being off from the main camera by up to 75 degrees!)
              */
 
-            if (!RFP2Config.compatibility.disableWhenSwimming) {
-                if (renderEntity.isSwimming() && RFP2Config.compatibility.swimmingAnimationCompat) {
+            // Check if disabled while swimming is disabled and if the animation compat option is enabled.
+            if (!RFP2Config.compatibility.disableWhenSwimming && RFP2Config.compatibility.swimmingAnimationCompat) {
+                // Check if we're swimming.
+                if (renderEntity.isSwimming()) {
+                    // We're swimming and they're both enabled. Move the offset a little bit.
                     playerModelOffset += 0.3f;
                     playerModelYOffset -= 0.3f;
                 }
